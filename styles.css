@@ -1,0 +1,257 @@
+/* font-family: "Inconsolata", monospace;
+font-family: "Roboto Mono", monospace; */
+
+/* Normalización */
+/* Con el asterisco (*) indicamos que las caracteristicas que indicamos son para todo el documento */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Esto mantiene el ancho y alto a pesar de padding y border */
+    font-family:"Inconsolata", monospace;
+    list-style: none; /* Quitamos los puntos y/o decoración de las listas */
+    text-decoration: none; /* Quitamos el subrayado de los enlaces */
+    color: white; /* Color de la fuente */
+
+}
+
+body{
+    background-color: black; /* TODO: borrar cuando tengamos el fondo final, usamos este color de fondo durante la edición del sitio */
+}
+
+header{
+    position: fixed; /* Esto hace que el header quede fijo en la parte superior */
+    right: 0;
+    top: 0;
+    z-index: 100; /* Hace que el header se muestre por arriba, efecto 3D*/
+    width: 100%;
+    display: flex; /* Hace que los elementos del header se pongan en línea horizontal*/
+    align-items: center; /* centra verticalmente(en este caso)*/
+    justify-content: space-between; /* Separa los elementos entre sí*/
+    padding: 15px 3%; /* Le da 15px en el eje vertical y 3% en el eje horizontal */
+    background-color: transparent;
+
+}
+.logo{
+    font-size: 30px; /* Tamaño de la fuente */
+    font-weight: 800; /* Ancho de la fuente */
+}
+.navlist{
+    display: flex; /* Pone los elementos del menú(ul) en línea horizontal*/
+}
+.navlist a{
+    margin-left: 60px; /* Le da margen a cada elemento, en caso pone 60px del lado izquierdo de cada uno */
+    font-size: 15px; /* Tamaño de fuente */
+    font-weight: 600; /* Ancho del texto */
+    border-bottom: 2px solid transparent; /* Subrayado transparente */
+    transition: all 0.5s ease; /* Configuramos para que TODAS las transisiones del "navlist a" y que duren 0,5 segundos */
+}
+.navlist a:hover{
+    border-bottom: 2px solid white; /* Subrayado blanco que aparece cuando hacemos hover*/    
+
+}
+
+#menu-icon{
+    display: none;  /* Esta en NONE mientras no se acceda desde un celular */
+    color: white;
+    font-size: 35px;
+    z-index: 101; /* Para que esté pos encima del hearder(z-index 100;)*/
+    cursor: pointer; /* Cuando el cursos se pone sobre el icono del menú cambia a una manito*/
+}
+#menu-toggle{
+    display: none; /* No queremos que se vea este checkbox */
+}
+.menu-icon-action{
+    display: none; /* Para que no se le pueda hacer clic*/
+}
+
+.hero{
+    height: 100%; /* Ocupará todo el alto posible */
+    width: 100%; /*  Ocupara todo el ancho posible */
+    min-height: 100vh; /* Altura mínima*/
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /* Color de fondo con gradiente*/
+    position: relative; /* Para que sea relativo al contenedor, nos permite usar top, bottom, left y right */
+    display: grid; /*Para poder dividir el HERO, en este caso en 2 columnas*/
+    grid-template-columns: 1fr 1fr; /* Determinamos las 2 columnas */
+    align-items: center; /* Alineamos verticalmente el HERO */
+    gap: 2 rem; /* Le damos espacio de 2rem entre las 2 columnas*/
+
+
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-img img{
+    width: 400px;
+    margin: 5% 0 0 15%;
+    height: auto;
+    transition: all 5s linear; /* Haceque la transición sea lineal*/  
+}
+.hero-img img:hover{
+    width: 450px;
+    opacity: 0.6;  /*Cambia la opacidad*/
+
+
+}
+
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+
+} 
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3px;
+} 
+.hero-text h1{
+    font-family: "Roboto Mono", monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+    
+} 
+
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1;
+}
+.hero-text a{
+    display: inline-block; /*Estor permitirá que le demos ancho y alto*/
+    background-color: #4d4d4d;  /* Color de fondo de los 2 botones*/
+    border: 1px solid transparent; /* Borde */
+    padding: 15px 30px; /* Separación entre el borde del boton y el tetxo interno*/
+    line-height: 1.4;
+    font-size: 16px; /* Tamaño de fuente*/
+    font-weight: 500; /* Grosor de la fuente*/
+    border-radius: 30px; /* Redondeo del boton */ 
+    text-transform: uppercase; /* Pone todo el texto en mayuscula*/
+    transition: all 0.5s ease; /* Transición para darle animación a los botones*/
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+
+}
+.hero-text a.portfolio{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.portfolio i{
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.icons{
+    position: absolute; /*Para poder ubicarlos exacatamente donde querramos*/
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+
+}
+.icons i {
+    display: block; /* Aqui hacemos que los ícones ocupen toda la línea y se acomoden uno sobre otro*/
+    margin: 26px 0; /* Separación entre los íconos*/
+    font-size: 24px; /* Le damos el tamaño a los íconos*/
+    transition: all 0.5s ease; 
+}
+.icons i:hover{
+    color: #4d4d4d; /* Cambiar el color de ícono al ponernos sobre el*/
+    transform: translateY(-5px); /* Al ponernos sobre el ícono este se moverá levemente*/
+
+}
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+
+}
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+/* Mediaqueris para que la web sea responsive, o sea que s epueda viisualizar en diferentes dispositivos sin problemas*/
+
+@media(max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: 0.2s;
+
+    }
+    .hero-texto{
+        padding-top: 0;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;    
+    }
+    .hero-text p{
+        font-size: 70%;
+    }
+
+    .icons{
+        display: none; /* Sacamos los iconos para que no se superpongan con el texto*/
+    }
+
+}
+@media (max-width: 768px){
+    .menu-icon-action{
+        display: block;
+    }
+    #menu-icon{
+        display: block;
+    }
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+
+    } 
+    .hero-img img{
+        margin: 0;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #0d3f48e4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease ;
+        border-radius: 20px;
+    }
+    .navlist a{
+       
+        display: block;
+        margin: 7px 0;
+    }
+    #menu-toggle:checked + label.menu-icon-action +ul{
+        right: 0;
+    }
+}
