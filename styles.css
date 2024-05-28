@@ -251,7 +251,8 @@ section {
         display: block;
         margin: 7px 0;
     }
-    #menu-toggle:checked + label.menu-icon-action +ul{
-        right: 0;
+    .navlist.open{
+        right: 0; 
     }
+    
 }
